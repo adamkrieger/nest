@@ -7,7 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="{% block description %}{% endblock description %}">
         <meta name="keywords" content="{% block keywords %}{% endblock keywords %}">
-        <link rel="icon" href="{{ SITEURL }}/favicon.ico">
+
+        {% if NEST_FAVICON_PNG %}
+            <link rel="icon" type="image/png" href="{{ SITEURL }}/images/favicon.png">
+        {% else %}
+            <link rel="icon" href="{{ SITEURL }}/favicon.ico">
+        {% endif %}
 
         <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 
